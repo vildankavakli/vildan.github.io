@@ -1,57 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<head>
+    		<meta charset="utf-8">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=0.5, minimal-ui">
+    		<link rel = "stylesheet" type = "text/css" href = "style.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Adam Asmaca</title>
-</head>
+    		<title>Adam Asmaca</title>
 
-<body>
-    <h1>Adam Asmaca</h1>
-    <p>Gizlenmiş kelimeyi bulmak için bir harf giriniz.</p>
-    <div class="container">
-        <svg height="250" width="250" class="grafik">
+		<style>
+      			canvas {
+        			background-color: #FFF;
+      			}
+    		</style>
+	</head>
 
-            <!--asıldığı yer-->
-            <line x1="50" y1="20" x2="130" y2="20" />
-            <line x1="130" y1="20" x2="130" y2="50" />
-            <line x1="50" y1="20" x2="50" y2="250" />
-            <line x1="10" y1="250" x2="90" y2="250" />
+	<body onload="startGame()">
+	<header> <h1>Adam Asmaca</h1></header>
+		<section>
+			<article>            
+            			<button type="button" onclick="guessWord()">Kelimeyi tahmin et</button>   
+            			<button type="button" onclick="showGameword()">Kelimeyi göster</button> 
+           			<button type="button" onclick="guessLetter()">Harfi tahmin et</button> 
 
-            <!--kafa-->
-            <circle cx="130" cy="70" r="20" fill="#03002e" class="item" />
+            			<div id="idResult"></div> 
+  
+				<p id="idShowGameword"></p>
+      
+				<canvas id="myCanvas" width="200" height="150" style="border:1px solid #FFF;">
+					Your browser does not support the HTML5 canvas 
+				</canvas>
 
-            <!--gövde-->
-            <line x1="130" y1="90" x2="130" y2="170" class="item" />
-
-            <!--kollar-->
-            <line x1="130" y1="120" x2="100" y2="100" class="item" />
-            <line x1="130" y1="120" x2="160" y2="100" class="item" />
-
-            <!--bacaklar-->
-            <line x1="130" y1="170" x2="160" y2="190" class="item" />
-            <line x1="130" y1="170" x2="100" y2="190" class="item" />
-
-        </svg>
-        <div id="wrong-letters">
-            <h3>Hatalı Harfler</h3>
-            <span>
-            <!--Bu kısımda hatalı harfleri ekrana basacaksın-->
-            </span>
-        </div>
-
-        <div id = "word">
+            			<div id = "idWrongGuesses">
+                			<h4>Hatalı kelimeler</h4>
+                			<p id="idArrayOfWrongGuesses"></p>
+            			</div>
             
-        </div>
-
-    </div>
-    <script src="script.js"></script>
-
-
-
-
-</body>
+        		</article>
+    		</section>
+    
+ 	<script src = "proje.js"></script>\
+	</body>
 
 </html>
